@@ -1,3 +1,10 @@
-# 빌드 환경 테스트
+# Main 함수
 
-print("hello")
+from scripts.fetch_app_list import fetch_app_list
+
+def main():
+    fetch_app_list()
+
+
+if __name__ == "__main__":
+	main()
