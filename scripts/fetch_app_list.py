@@ -21,4 +21,5 @@ def fetch_app_list():
     # 파일 저장
     with open(APP_LIST_PATH, "w", encoding="utf-8") as f:
         json.dump(apps, f, ensure_ascii=False, indent=2)
-    print(f"앱 리스트 {len(apps)}개 저장 완료 ({APP_LIST_PATH})")
+
+    print(f"전체 앱: {len(apps)}개 → 필터링 후: {len(apps)}개 저장 완료 ({APP_LIST_PATH})")

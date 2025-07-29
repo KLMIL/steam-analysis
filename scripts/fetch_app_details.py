@@ -14,9 +14,15 @@ STEAM_APP_DETAILS_URL = "https://store.steampowered.com/api/appdetails"
 def get_app_details(appid):
     url = f"{STEAM_APP_DETAILS_URL}?appids={appid}&cc=kr&l=korean"
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-        "Accept": "application/json",
-        "Accept-Language": "en-US,en;q=0.9"
+        'User-Agent': (
+            'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+            'AppleWebKit/537.36 (KHTML, like Gecko) '
+            'Chrome/115.0.0.0 Safari/537.36'
+        ),
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+        'Accept-Language': 'ko,en-US;q=0.9,en;q=0.8',
+        'Connection': 'keep-alive',
+        'DNT': '1',
     }
     try:
         resp = requests.get(url, timeout=10, headers=headers)
